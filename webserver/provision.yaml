@@ -1,0 +1,21 @@
+---
+docker-dnf:
+  provisioner: docker
+  images: [
+    'litmusimage/centos:stream8',
+    'litmusimage/centos:stream9',
+    'litmusimage/redhat:8',
+    'litmusimage/redhat:9'
+  ]
+docker-apt:
+  provisioner: docker
+  images: [
+    'litmusimage/ubuntu:20.04',
+    'litmusimage/ubuntu:22.04',
+    'litmusimage/ubuntu:24.04'
+  ]
+docker-redhat8:
+  provisioner: docker
+  images: [
+    'litmusimage/redhat:8',
+  ]
