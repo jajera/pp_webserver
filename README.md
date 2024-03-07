@@ -4,14 +4,16 @@
 
 ### docker
 
+```bash
 cat /proc/sys/kernel/keys/maxkeys
 
 cat /proc/sys/kernel/keys/root_maxkeys
 
 cat /proc/keys | wc -l
-
+```
 ### puppet
 
+```bash
 pdk new module webserver
 
 cd webserver
@@ -23,11 +25,17 @@ pdk validate
 pdk test unit --parallel
 
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/redhat:8]'
+
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/redhat:9]'
+
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/centos:stream8]'
+
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/centos:stream9]'
+
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/ubuntu:20.04]'
+
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/ubuntu:22.04]'
+
 pdk bundle exec rake 'litmus:provision[docker, litmusimage/ubuntu:24.04]'
 
 pdk bundle exec rake litmus:provision_list[docker-dnf]
@@ -55,3 +63,4 @@ bolt command run 'ls /etc/nginx/sites-enabled' --targets localhost:2222 -i spec/
 pdk bundle exec rake litmus:acceptance:parallel
 
 pdk bundle exec rake litmus:tear_down
+```
